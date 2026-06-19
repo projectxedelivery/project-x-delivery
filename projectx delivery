@@ -1,0 +1,26 @@
+index.html
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project X Delivery</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>PROJECT X DELIVERY</h1>
+        <p>Recrutăm curieri Bolt Food & Wolt</p>
+
+        <a href="#contact" class="btn">
+            Aplică Acum
+        </a>
+    </header>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
