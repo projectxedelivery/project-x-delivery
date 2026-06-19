@@ -12,7 +12,6 @@
   <div class="menu-logo"><span>Project X</span>Delivery</div>
 
   <p class="menu-title">Alege platforma:</p>
-
   <a href="https://wa.me/40720567098?text=Salut!%20Vreau%20sa%20lucrez%20cu%20Project%20X%20Delivery%20pe%20platforma%20Wolt." target="_blank">WOLT</a>
   <a href="https://wa.me/40720567098?text=Salut!%20Vreau%20sa%20lucrez%20cu%20Project%20X%20Delivery%20pe%20platforma%20Bolt." target="_blank">BOLT</a>
   <a href="https://wa.me/40720567098?text=Salut!%20Vreau%20sa%20lucrez%20cu%20Project%20X%20Delivery%20pe%20platforma%20Glovo." target="_blank">GLOVO</a>
@@ -30,140 +29,155 @@
 
 <main>
 
-  <section class="hero">
-    <div class="top-banner">🎉 Bonus 300 lei după primele 300 de comenzi • Comision 7% în prima lună</div>
+<section class="hero">
+  <div class="top-banner">🎉 Bonus 300 lei după primele 300 de comenzi • Comision 7% în prima lună</div>
 
-    <div class="hero-content">
-      <div class="badge">București • Flotă curieri</div>
+  <div class="hero-content">
+    <div class="badge">București • Flotă curieri</div>
+    <h1>Project X <span>Delivery</span></h1>
+    <p>Livrează mai mult. Câștigă mai bine. Alătură-te echipei Project X Delivery.</p>
 
-      <h1>Project X <span>Delivery</span></h1>
-
-      <p>Livrează mai mult. Câștigă mai bine. Alătură-te echipei Project X Delivery.</p>
-
-      <div class="platform-cards">
-        <div>WOLT</div>
-        <div>BOLT</div>
-        <div>GLOVO</div>
-      </div>
+    <div class="platform-cards">
+      <div>WOLT</div>
+      <div>BOLT</div>
+      <div>GLOVO</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="apply-form-section">
-    <h2>Aplică rapid</h2>
+<section class="numbers">
+  <h2>Project X în cifre</h2>
+  <div class="grid">
+    <div><h3>50+</h3><p>Curieri în echipă</p></div>
+    <div><h3>100K+</h3><p>Comenzi livrate</p></div>
+    <div><h3>24/7</h3><p>Suport rapid</p></div>
+    <div><h3>7%</h3><p>Comision prima lună</p></div>
+  </div>
+</section>
 
-    <div class="box">
-      <input type="text" id="nume" placeholder="Nume și prenume">
-      <input type="tel" id="telefon" placeholder="Număr de telefon">
+<section class="apply-form-section">
+  <h2>Aplică rapid</h2>
 
-      <select id="platforma">
-        <option value="">Alege platforma</option>
-        <option value="Wolt">Wolt</option>
-        <option value="Bolt">Bolt</option>
-        <option value="Glovo">Glovo</option>
-      </select>
+  <div class="box">
+    <input type="text" id="nume" placeholder="Nume și prenume">
+    <input type="tel" id="telefon" placeholder="Număr de telefon">
+    <input type="email" id="email" placeholder="Email">
 
-      <select id="transport">
-        <option value="">Mijloc de transport</option>
-        <option value="Bicicletă">Bicicletă</option>
-        <option value="Scuter">Scuter</option>
-        <option value="Mașină">Mașină</option>
-      </select>
+    <select id="platforma">
+      <option value="">Alege platforma</option>
+      <option value="Wolt">Wolt</option>
+      <option value="Bolt">Bolt</option>
+      <option value="Glovo">Glovo</option>
+    </select>
 
-      <button onclick="trimiteAplicarea()">Trimite aplicația pe WhatsApp</button>
+    <select id="transport">
+      <option value="">Mijloc de transport</option>
+      <option value="Bicicletă">Bicicletă</option>
+      <option value="Scuter">Scuter</option>
+      <option value="Mașină">Mașină</option>
+    </select>
+
+    <select id="carte">
+      <option value="">Carte de muncă?</option>
+      <option value="Da">Da</option>
+      <option value="Vreau detalii">Vreau detalii</option>
+    </select>
+
+    <button onclick="trimiteAplicarea()">Trimite aplicația pe WhatsApp</button>
+  </div>
+</section>
+
+<section class="offer">
+  <h2>Oferta noastră</h2>
+  <div class="big-box">
+    <h3>Începe cu Project X Delivery</h3>
+    <p>Îți oferim colaborare cu <strong>carte de muncă</strong>, suport constant și condiții clare.</p>
+    <p>În prima lună comisionul este de <strong>7%</strong>, iar după prima lună revine la <strong>10%</strong>.</p>
+    <p>După primele <strong>300 de comenzi</strong>, primești bonus de <strong>300 lei</strong>.</p>
+  </div>
+</section>
+
+<section class="calculator">
+  <h2>Simulator venit curier</h2>
+
+  <div class="box">
+    <input type="number" id="venit" placeholder="Venit estimat din aplicație, ex: 5000 lei">
+
+    <select id="tipComision">
+      <option value="7">Prima lună - comision 7%</option>
+      <option value="10">După prima lună - comision 10%</option>
+    </select>
+
+    <input type="number" id="costCarteMunca" placeholder="Suma pentru cartea de muncă, ex: 600 lei">
+
+    <button onclick="calculeazaComision()">Calculează transparent</button>
+
+    <div class="result-box" id="rezultat">
+      Introdu venitul și suma pentru cartea de muncă.
     </div>
-  </section>
 
-  <section class="offer">
-    <h2>Oferta noastră</h2>
+    <p class="note">Calculatorul este orientativ. Fiecare curier poate introduce suma proprie.</p>
+  </div>
+</section>
 
-    <div class="big-box">
-      <h3>Începe cu Project X Delivery</h3>
-      <p>Îți oferim colaborare cu <strong>carte de muncă</strong>, suport constant și condiții clare.</p>
-      <p>În prima lună comisionul este de <strong>7%</strong>, iar după prima lună revine la <strong>10%</strong>.</p>
-      <p>După primele <strong>300 de comenzi</strong>, primești bonus de <strong>300 lei</strong>.</p>
-    </div>
-  </section>
+<section class="reviews">
+  <h2>Ce spun curierii</h2>
+  <div class="grid">
+    <div><h3>★★★★★</h3><p>„Colaborare serioasă și comunicare rapidă.”</p></div>
+    <div><h3>★★★★★</h3><p>„Am început rapid și am primit suport.”</p></div>
+    <div><h3>★★★★★</h3><p>„Condiții clare și echipă ok.”</p></div>
+  </div>
+</section>
 
-  <section class="calculator">
-    <h2>Simulator venit curier</h2>
+<section class="area">
+  <h2>Zona de activitate</h2>
+  <div class="big-box center">
+    <h3>📍 București & Ilfov</h3>
+    <p>Momentan recrutăm curieri pentru București și zonele apropiate.</p>
+    <a class="call-btn" href="tel:0720567098">📞 Sună acum</a>
+  </div>
+</section>
 
-    <div class="box">
-      <input type="number" id="venit" placeholder="Venit estimat din aplicație, ex: 5000 lei">
+<section class="benefits">
+  <h2>De ce să alegi Project X?</h2>
+  <div class="grid">
+    <div><h3>Program flexibil</h3><p>Lucrezi în ritmul tău.</p></div>
+    <div><h3>Suport rapid</h3><p>Primești ajutor când ai nevoie.</p></div>
+    <div><h3>Carte de muncă</h3><p>Colaborare organizată.</p></div>
+    <div><h3>Bonus 300 lei</h3><p>După primele 300 de comenzi.</p></div>
+  </div>
+</section>
 
-      <select id="tipComision">
-        <option value="7">Prima lună - comision 7%</option>
-        <option value="10">După prima lună - comision 10%</option>
-      </select>
+<section class="faq">
+  <h2>Întrebări frecvente</h2>
 
-      <input type="number" id="costCarteMunca" placeholder="Suma pentru cartea de muncă, ex: 600 lei">
+  <div class="faq-item">
+    <button onclick="toggleFaq(this)">Cum aplic?</button>
+    <p>Completezi formularul sau alegi platforma din meniul din stânga.</p>
+  </div>
 
-      <button onclick="calculeazaComision()">Calculează transparent</button>
+  <div class="faq-item">
+    <button onclick="toggleFaq(this)">Care este comisionul?</button>
+    <p>7% în prima lună, apoi 10%.</p>
+  </div>
 
-      <div class="result-box" id="rezultat">
-        Introdu venitul și suma pentru cartea de muncă.
-      </div>
+  <div class="faq-item">
+    <button onclick="toggleFaq(this)">Există bonus?</button>
+    <p>Da, 300 lei după primele 300 de comenzi.</p>
+  </div>
 
-      <p class="note">
-        Calculatorul este orientativ. Fiecare curier poate introduce suma proprie pentru cartea de muncă.
-      </p>
-    </div>
-  </section>
+  <div class="faq-item">
+    <button onclick="toggleFaq(this)">În ce oraș activați?</button>
+    <p>Momentan în București și Ilfov.</p>
+  </div>
+</section>
 
-  <section class="transparency">
-    <h2>Transparență Project X Delivery</h2>
-
-    <div class="big-box">
-      <p>✔ Introduci venitul estimat.</p>
-      <p>✔ Alegi comisionul: 7% sau 10%.</p>
-      <p>✔ Introduci suma pentru cartea de muncă.</p>
-      <p>✔ Vezi automat suma finală rămasă.</p>
-      <p>✔ Bonus 300 lei după primele 300 de comenzi.</p>
-    </div>
-  </section>
-
-  <section class="benefits">
-    <h2>De ce să alegi Project X?</h2>
-
-    <div class="grid">
-      <div><h3>Program flexibil</h3><p>Lucrezi în ritmul tău.</p></div>
-      <div><h3>Suport rapid</h3><p>Primești ajutor când ai nevoie.</p></div>
-      <div><h3>Carte de muncă</h3><p>Colaborare organizată și transparentă.</p></div>
-      <div><h3>Bonus 300 lei</h3><p>După primele 300 de comenzi.</p></div>
-    </div>
-  </section>
-
-  <section class="requirements">
-    <h2>Ce ai nevoie?</h2>
-
-    <div class="big-box">
-      <p>✔ Telefon cu internet</p>
-      <p>✔ Seriozitate și punctualitate</p>
-      <p>✔ Dorință de muncă</p>
-      <p>✔ Bicicletă, scuter sau mașină</p>
-    </div>
-  </section>
-
-  <section class="faq">
-    <h2>Întrebări frecvente</h2>
-
-    <div class="big-box">
-      <h3>Cum aplic?</h3>
-      <p>Completezi formularul sau alegi platforma din meniul din stânga.</p>
-
-      <h3>Care este comisionul?</h3>
-      <p>7% în prima lună, apoi 10%.</p>
-
-      <h3>Există bonus?</h3>
-      <p>Da, 300 lei după primele 300 de comenzi.</p>
-    </div>
-  </section>
-
-  <footer>
-    <h3>Project X Delivery</h3>
-    <p>București</p>
-    <p>Telefon: 0720 567 098</p>
-    <p>Email: projectxedelivery@gmail.com</p>
-  </footer>
+<footer>
+  <h3>Project X Delivery</h3>
+  <p>București</p>
+  <p>Telefon: 0720 567 098</p>
+  <p>Email: projectxedelivery@gmail.com</p>
+</footer>
 
 </main>
 
@@ -173,15 +187,17 @@
 function trimiteAplicarea() {
   const nume = document.getElementById("nume").value;
   const telefon = document.getElementById("telefon").value;
+  const email = document.getElementById("email").value;
   const platforma = document.getElementById("platforma").value;
   const transport = document.getElementById("transport").value;
+  const carte = document.getElementById("carte").value;
 
-  if (!nume || !telefon || !platforma || !transport) {
+  if (!nume || !telefon || !email || !platforma || !transport || !carte) {
     alert("Te rog completează toate câmpurile.");
     return;
   }
 
-  const mesaj = `Salut! Vreau să aplic pentru Project X Delivery.%0A%0ANume: ${nume}%0ATelefon: ${telefon}%0APlatforma dorită: ${platforma}%0AMijloc de transport: ${transport}`;
+  const mesaj = `Salut! Vreau să aplic pentru Project X Delivery.%0A%0ANume: ${nume}%0ATelefon: ${telefon}%0AEmail: ${email}%0APlatforma dorită: ${platforma}%0AMijloc de transport: ${transport}%0ACarte de muncă: ${carte}`;
   window.open(`https://wa.me/40720567098?text=${mesaj}`, "_blank");
 }
 
@@ -196,11 +212,6 @@ function calculeazaComision() {
     return;
   }
 
-  if (costCarteMunca < 0) {
-    rezultat.innerHTML = "Suma pentru cartea de muncă nu poate fi negativă.";
-    return;
-  }
-
   const comision = venit * procent / 100;
   const sumaFinala = venit - comision - costCarteMunca;
 
@@ -211,6 +222,11 @@ function calculeazaComision() {
     <strong>Suma finală rămasă:</strong> ${sumaFinala.toFixed(2)} lei<br>
     <strong>Bonus:</strong> 300 lei după primele 300 de comenzi
   `;
+}
+
+function toggleFaq(button) {
+  const item = button.parentElement;
+  item.classList.toggle("active");
 }
 </script>
 
