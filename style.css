@@ -102,6 +102,7 @@ section {
 .hero-content {
   position: relative;
   z-index: 2;
+  animation: fadeUp 1s ease;
 }
 
 .badge {
@@ -155,6 +156,12 @@ h1 {
   font-size: 26px;
   font-weight: bold;
   box-shadow: 0 0 28px rgba(176,0,255,0.6);
+  transition: 0.3s;
+}
+
+.platform-cards div:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 35px rgba(57,255,20,0.7);
 }
 
 .vehicle {
@@ -163,6 +170,7 @@ h1 {
   font-size: 120px;
   opacity: 0.27;
   filter: drop-shadow(0 0 18px #39ff14);
+  animation: float 4s ease-in-out infinite;
 }
 
 .bike {
@@ -176,7 +184,8 @@ h1 {
 }
 
 .about,
-.requirements {
+.requirements,
+.offer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -207,6 +216,32 @@ h2 {
   text-shadow: 0 0 12px #b000ff;
 }
 
+.offer-box {
+  max-width: 850px;
+  margin: 20px auto 0;
+  padding: 35px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.08);
+  border: 2px solid rgba(57,255,20,0.7);
+  box-shadow: 0 0 35px rgba(176,0,255,0.55);
+}
+
+.offer-box h3 {
+  color: #39ff14;
+  font-size: 30px;
+  margin-top: 0;
+}
+
+.offer-box p {
+  font-size: 21px;
+  line-height: 1.6;
+}
+
+.offer-box strong {
+  color: #39ff14;
+  text-shadow: 0 0 12px #39ff14;
+}
+
 .grid div,
 .list-box,
 .faq-box {
@@ -215,6 +250,15 @@ h2 {
   background: rgba(255,255,255,0.07);
   border: 1px solid rgba(57,255,20,0.55);
   box-shadow: 0 0 25px rgba(176,0,255,0.45);
+  transition: 0.3s;
+}
+
+.grid div:hover,
+.faq-box:hover,
+.list-box:hover,
+.offer-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 35px rgba(57,255,20,0.45);
 }
 
 .grid div {
@@ -253,6 +297,53 @@ footer h3 {
   font-size: 26px;
 }
 
+.whatsapp-float {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #39ff14;
+  color: #100018;
+  font-size: 30px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 30px rgba(57,255,20,0.9);
+  z-index: 50;
+  transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background: #b000ff;
+  color: white;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
 @media (max-width: 850px) {
   body {
     padding-left: 0;
@@ -274,8 +365,13 @@ footer h3 {
     font-size: 54px;
   }
 
+  h2 {
+    font-size: 34px;
+  }
+
   .hero p,
-  .about p {
+  .about p,
+  .offer-box p {
     font-size: 18px;
   }
 
