@@ -594,3 +594,24 @@ footer h3 {
   line-height: 1.7 !important;
   box-shadow: 0 0 20px rgba(57,255,20,0.25) !important;
 }
+.transparency {
+  min-height: auto;
+  padding: 80px 30px;
+  background: linear-gradient(135deg, #07000d, #160020);
+}
+
+.transparency-box {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.07);
+  border: 2px solid #39ff14;
+  box-shadow: 0 0 35px rgba(57,255,20,0.35);
+  text-align: left;
+}
+
+.transparency-box p {
+  font-size: 20px;
+  line-height: 1.6;
+}
