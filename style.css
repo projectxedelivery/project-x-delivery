@@ -13,41 +13,37 @@ body {
   background: #07000d;
   color: white;
   font-family: Arial, sans-serif;
-  padding-left: 240px;
+  padding-left: 250px;
 }
 
-.side-menu {
+.menu {
   position: fixed;
   left: 0;
   top: 0;
-  width: 240px;
+  width: 250px;
   height: 100vh;
   padding: 35px 22px;
-  background: rgba(7, 0, 13, 0.94);
+  background: rgba(7, 0, 13, 0.96);
   border-right: 2px solid #39ff14;
-  box-shadow: 0 0 35px rgba(176, 0, 255, 0.7);
-  z-index: 10;
+  box-shadow: 0 0 35px rgba(176, 0, 255, 0.55);
+  z-index: 20;
 }
 
 .menu-logo {
   font-family: 'Bangers', cursive;
-  font-size: 38px;
+  font-size: 40px;
   color: #39ff14;
-  text-shadow:
-    0 0 10px #39ff14,
-    3px 3px 0 #b000ff;
+  text-shadow: 0 0 12px #39ff14, 3px 3px 0 #b000ff;
   margin-bottom: 35px;
 }
 
-.side-menu p {
-  color: white;
+.menu p {
   font-weight: bold;
-  margin-bottom: 20px;
 }
 
-.side-menu a {
+.menu a {
   display: block;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   padding: 16px;
   border-radius: 18px;
   border: 2px solid #39ff14;
@@ -56,28 +52,41 @@ body {
   font-size: 20px;
   font-weight: bold;
   text-align: center;
-  box-shadow: 0 0 18px rgba(57,255,20,0.5);
+  box-shadow: 0 0 18px rgba(57,255,20,0.45);
+  transition: 0.3s;
 }
 
-.side-menu a:hover {
+.menu a:hover {
   background: #39ff14;
   color: #16001f;
+  transform: scale(1.04);
+}
+
+.menu-contact {
+  position: absolute;
+  bottom: 25px;
+  left: 22px;
+  right: 22px;
+  font-size: 13px;
+  color: #ddd;
+}
+
+section {
+  min-height: 100vh;
+  padding: 80px 30px;
+  text-align: center;
 }
 
 .hero {
   position: relative;
-  min-height: 100vh;
-  padding: 70px 20px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  text-align: center;
   background:
-    radial-gradient(circle at 20% 20%, rgba(57,255,20,0.35), transparent 28%),
-    radial-gradient(circle at 80% 70%, rgba(185,0,255,0.55), transparent 35%),
-    linear-gradient(135deg, #090011, #27003d, #050008);
+    radial-gradient(circle at 20% 20%, rgba(57,255,20,0.28), transparent 28%),
+    radial-gradient(circle at 80% 70%, rgba(185,0,255,0.45), transparent 35%),
+    linear-gradient(135deg, #090011, #250039, #050008);
 }
 
 .hero::before {
@@ -85,43 +94,55 @@ body {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(45deg, transparent 48%, rgba(57,255,20,0.08) 49%, transparent 51%),
-    linear-gradient(-45deg, transparent 48%, rgba(176,0,255,0.10) 49%, transparent 51%);
-  background-size: 80px 80px;
-  opacity: 0.8;
+    linear-gradient(45deg, transparent 48%, rgba(57,255,20,0.06) 49%, transparent 51%),
+    linear-gradient(-45deg, transparent 48%, rgba(176,0,255,0.08) 49%, transparent 51%);
+  background-size: 85px 85px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.badge {
+  display: inline-block;
+  border: 2px solid #39ff14;
+  padding: 10px 22px;
+  border-radius: 40px;
+  color: #39ff14;
+  font-weight: bold;
+  box-shadow: 0 0 20px rgba(57,255,20,0.7);
 }
 
 h1 {
-  position: relative;
-  z-index: 2;
   font-family: 'Bangers', cursive;
-  font-size: 95px;
+  font-size: 92px;
   letter-spacing: 5px;
   color: #39ff14;
   text-transform: uppercase;
   text-shadow:
     0 0 10px #39ff14,
-    0 0 35px #39ff14,
+    0 0 30px #39ff14,
     6px 6px 0 #b000ff,
     10px 10px 0 #000;
-  margin: 0;
+  margin: 25px 0 10px;
 }
 
-.subtitle {
-  position: relative;
-  z-index: 2;
-  font-size: 26px;
-  text-shadow: 0 0 15px #b000ff;
+.hero p {
+  font-size: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-shadow: 0 0 12px #b000ff;
 }
 
-.platform-cards {
-  position: relative;
-  z-index: 2;
-  margin-top: 35px;
+.platform-cards,
+.grid {
+  margin: 38px auto 0;
   display: flex;
   gap: 22px;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 1000px;
 }
 
 .platform-cards div {
@@ -133,43 +154,49 @@ h1 {
   color: #39ff14;
   font-size: 26px;
   font-weight: bold;
-  box-shadow: 0 0 30px rgba(176,0,255,0.65);
+  box-shadow: 0 0 28px rgba(176,0,255,0.6);
 }
 
 .vehicle {
   position: absolute;
   z-index: 1;
   font-size: 120px;
-  opacity: 0.25;
+  opacity: 0.27;
   filter: drop-shadow(0 0 18px #39ff14);
 }
 
 .bike {
   left: 8%;
-  bottom: 18%;
+  bottom: 17%;
 }
 
 .scooter {
-  right: 10%;
-  top: 22%;
+  right: 9%;
+  top: 20%;
 }
 
-.about {
-  min-height: 100vh;
-  padding: 100px 40px;
+.about,
+.requirements {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
   background:
-    radial-gradient(circle at top right, rgba(57,255,20,0.25), transparent 30%),
+    radial-gradient(circle at top right, rgba(57,255,20,0.20), transparent 30%),
     linear-gradient(135deg, #160020, #050008);
 }
 
-.about h2 {
-  font-size: 48px;
+.benefits,
+.faq {
+  background:
+    radial-gradient(circle at bottom left, rgba(176,0,255,0.22), transparent 30%),
+    linear-gradient(135deg, #07000d, #12001e);
+}
+
+h2 {
+  font-size: 44px;
   color: #39ff14;
-  text-shadow: 0 0 25px #39ff14;
+  text-shadow: 0 0 22px #39ff14;
+  margin-bottom: 25px;
 }
 
 .about p {
@@ -180,36 +207,85 @@ h1 {
   text-shadow: 0 0 12px #b000ff;
 }
 
-.contact {
-  margin-top: 35px;
+.grid div,
+.list-box,
+.faq-box {
+  padding: 28px;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(57,255,20,0.55);
+  box-shadow: 0 0 25px rgba(176,0,255,0.45);
 }
 
-.contact p {
-  font-size: 20px;
-  margin: 10px auto;
+.grid div {
+  width: 230px;
 }
 
-@media (max-width: 800px) {
+.grid h3,
+.faq-box h3 {
+  color: #39ff14;
+  font-size: 24px;
+}
+
+.grid p,
+.faq-box p,
+.list-box p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.list-box,
+.faq-box {
+  max-width: 750px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+footer {
+  padding: 40px 20px;
+  text-align: center;
+  background: #030005;
+  border-top: 1px solid rgba(57,255,20,0.45);
+}
+
+footer h3 {
+  color: #39ff14;
+  font-size: 26px;
+}
+
+@media (max-width: 850px) {
   body {
     padding-left: 0;
   }
 
-  .side-menu {
+  .menu {
     position: relative;
     width: 100%;
     height: auto;
     text-align: center;
   }
 
-  h1 {
-    font-size: 55px;
+  .menu-contact {
+    position: static;
+    margin-top: 25px;
   }
 
-  .platform-cards {
-    flex-direction: column;
+  h1 {
+    font-size: 54px;
+  }
+
+  .hero p,
+  .about p {
+    font-size: 18px;
   }
 
   .vehicle {
-    font-size: 80px;
+    font-size: 75px;
+  }
+
+  .platform-cards,
+  .grid {
+    flex-direction: column;
+    align-items: center;
   }
 }
