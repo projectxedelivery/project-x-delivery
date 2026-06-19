@@ -147,14 +147,18 @@ nav {
   text-shadow: 0 0 15px #39ff14;
 }
 
-nav a, .main-btn {
+.main-btn {
   background: #39ff14;
   color: #16001f;
-  padding: 13px 24px;
+  padding: 16px 35px;
   border-radius: 40px;
   text-decoration: none;
   font-weight: bold;
   box-shadow: 0 0 25px #39ff14;
+  margin-top: 30px;
+  font-size: 22px;
+  display: inline-block;
+}
 }
 
 .hero {
@@ -284,4 +288,39 @@ footer p {
   nav {
     padding: 15px 18px;
   }
+}
+.apply-section {
+  background: linear-gradient(135deg, #160020, #050008);
+}
+
+.apply-text {
+  font-size: 20px;
+  color: white;
+  text-shadow: 0 0 12px #b000ff;
+}
+
+.platform-buttons {
+  margin-top: 35px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.platform-buttons a {
+  min-width: 170px;
+  padding: 20px 30px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.08);
+  border: 2px solid #39ff14;
+  color: #39ff14;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  box-shadow: 0 0 25px rgba(57,255,20,0.6);
+}
+
+.platform-buttons a:hover {
+  background: #39ff14;
+  color: #16001f;
 }
