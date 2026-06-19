@@ -4,155 +4,250 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project X Delivery</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: #07000d;
+      padding-left: 240px;
+    }
+
+    .menu {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 240px;
+      height: 100vh;
+      padding: 35px 22px;
+      background: rgba(7,0,13,0.95);
+      border-right: 2px solid #39ff14;
+      box-shadow: 0 0 35px rgba(176,0,255,0.7);
+      z-index: 10;
+    }
+
+    .menu-logo {
+      font-family: 'Bangers', cursive;
+      font-size: 38px;
+      color: #39ff14;
+      text-shadow: 0 0 12px #39ff14, 3px 3px 0 #b000ff;
+      margin-bottom: 30px;
+    }
+
+    .menu p {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .menu a {
+      display: block;
+      margin-bottom: 16px;
+      padding: 16px;
+      border-radius: 18px;
+      border: 2px solid #39ff14;
+      color: #39ff14;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 0 18px rgba(57,255,20,0.5);
+    }
+
+    .menu a:hover {
+      background: #39ff14;
+      color: #16001f;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 70px 25px;
+      text-align: center;
+    }
+
+    .hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(57,255,20,0.35), transparent 28%),
+        radial-gradient(circle at 80% 70%, rgba(185,0,255,0.55), transparent 35%),
+        linear-gradient(135deg, #090011, #27003d, #050008);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(45deg, transparent 48%, rgba(57,255,20,0.08) 49%, transparent 51%),
+        linear-gradient(-45deg, transparent 48%, rgba(176,0,255,0.10) 49%, transparent 51%);
+      background-size: 80px 80px;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 2;
+      font-family: 'Bangers', cursive;
+      font-size: 95px;
+      letter-spacing: 5px;
+      color: #39ff14;
+      text-transform: uppercase;
+      text-shadow:
+        0 0 10px #39ff14,
+        0 0 35px #39ff14,
+        6px 6px 0 #b000ff,
+        10px 10px 0 #000;
+      margin: 0;
+    }
+
+    .subtitle {
+      position: relative;
+      z-index: 2;
+      font-size: 26px;
+      text-shadow: 0 0 15px #b000ff;
+    }
+
+    .platforme {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 35px;
+    }
+
+    .platforme div {
+      min-width: 170px;
+      padding: 25px 35px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.08);
+      border: 2px solid #39ff14;
+      color: #39ff14;
+      font-size: 26px;
+      font-weight: bold;
+      box-shadow: 0 0 30px rgba(176,0,255,0.65);
+    }
+
+    .vehicle {
+      position: absolute;
+      z-index: 1;
+      font-size: 120px;
+      opacity: 0.28;
+      filter: drop-shadow(0 0 18px #39ff14);
+    }
+
+    .bike {
+      left: 8%;
+      bottom: 18%;
+    }
+
+    .scooter {
+      right: 10%;
+      top: 22%;
+    }
+
+    .about {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        radial-gradient(circle at top right, rgba(57,255,20,0.25), transparent 30%),
+        linear-gradient(135deg, #160020, #050008);
+    }
+
+    .about h2 {
+      font-size: 48px;
+      color: #39ff14;
+      text-shadow: 0 0 25px #39ff14;
+    }
+
+    .about p {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size: 23px;
+      line-height: 1.6;
+      text-shadow: 0 0 12px #b000ff;
+    }
+
+    .contact {
+      margin-top: 35px;
+      font-size: 20px;
+    }
+
+    @media (max-width: 800px) {
+      body {
+        padding-left: 0;
+      }
+
+      .menu {
+        position: relative;
+        width: 100%;
+        height: auto;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 55px;
+      }
+
+      .platforme {
+        flex-direction: column;
+      }
+
+      .vehicle {
+        font-size: 80px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-  <section class="hero">
-    <div class="tag">Wolt • Bolt • Glovo • Uber Eats</div>
+  <div class="menu">
+    <div class="menu-logo">PROJECT X</div>
+    <p>Alege platforma:</p>
 
-    <h1>Project X Delivery</h1>
-
-    <p class="subtitle">
-      Flotă de curieri în București. Aplică rapid și intră în echipa noastră.
-    </p>
-
-    <a class="btn" href="https://wa.me/40720567098?text=Salut!%20Vreau%20sa%20aplic%20pentru%20Project%20X%20Delivery.%20Numele%20meu%20este%20" target="_blank">
-      Aplică acum pe WhatsApp
-    </a>
-
-    <div class="cards">
-      <div>Program flexibil</div>
-      <div>Plată săptămânală</div>
-      <div>Suport rapid</div>
-    </div>
-  </section>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project X Delivery</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-  <nav>
-    <div class="logo">PROJECT X</div>
-    <a href="https://wa.me/40720567098?text=Salut!%20Vreau%20sa%20aplic%20pentru%20Project%20X%20Delivery.%20Numele%20meu%20este%20" target="_blank">
-      Aplică
-    </a>
-  </nav>
+    <a href="https://wa.me/40720567098?text=Salut!%20Vreau%20sa%20lucrez%20cu%20Project%20X%20Delivery%20pe%20platforma%20Wolt." target="_blank">Wolt</a>
+    <a href="https://wa.me/40720567098?text=Salut!%20Vreau%20sa%20lucrez%20cu%20Project%20X%20Delivery%20pe%20platforma%20Bolt." target="_blank">Bolt</a>
+    <a href="https://wa.me/40720567098?text=Salut!%20Vreau%20sa%20lucrez%20cu%20Project%20X%20Delivery%20pe%20platforma%20Glovo." target="_blank">Glovo</a>
+  </div>
 
   <section class="hero">
-    <div class="badge">București • Flotă curieri</div>
+    <div class="vehicle bike">🚲</div>
+    <div class="vehicle scooter">🛵</div>
+
     <h1>Project X Delivery</h1>
-    <p>Colaborăm cu Wolt, Bolt, Glovo și Uber Eats. Intră în echipa noastră și începe rapid.</p>
+    <p class="subtitle">Flotă de curieri în București</p>
 
-    <a class="main-btn" href="https://wa.me/40720567098?text=Salut!%20Vreau%20sa%20aplic%20pentru%20Project%20X%20Delivery.%20Numele%20meu%20este%20" target="_blank">
-      Aplică acum pe WhatsApp
-    </a>
-  </section>
-
-  <section class="platforms">
-    <h2>Platforme partenere</h2>
-    <div class="grid">
+    <div class="platforme">
       <div>Wolt</div>
       <div>Bolt</div>
       <div>Glovo</div>
-      <div>Uber Eats</div>
     </div>
   </section>
 
-  <section class="benefits">
-    <h2>De ce Project X?</h2>
-    <div class="grid">
-      <div>Program flexibil</div>
-      <div>Plată săptămânală</div>
-      <div>Suport rapid</div>
-      <div>Comunicare directă</div>
-    </div>
-  </section>
-
-  <section class="steps">
-    <h2>Cum aplici?</h2>
-    <div class="step-box">
-      <p><span>1</span> Apeși pe butonul de WhatsApp</p>
-      <p><span>2</span> Trimiți mesajul de aplicare</p>
-      <p><span>3</span> Te contactăm pentru detalii</p>
-    </div>
-  </section>
-
-  <footer>
-    <p>Project X Delivery • București</p>
-    <p>Telefon: 0720 567 098</p>
-    <p>Email: projectxedelivery@gmail.com</p>
-  </footer>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project X Delivery</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-  <nav>
-    <div class="logo">PROJECT X DELIVERY</div>
-  </nav>
-
-  <section class="hero">
-    <div class="badge">București • Flotă curieri</div>
-
-    <h1>Project X Delivery</h1>
-
+  <section class="about">
+    <h2>Te vrem în echipa noastră</h2>
     <p>
-      Colaborăm cu Wolt, Bolt, Glovo și Uber Eats. Intră în echipa noastră și începe rapid.
+      La Project X Delivery căutăm curieri serioși, ambițioși și dornici să câștige prin livrări.
+      Colaborăm cu Wolt, Bolt și Glovo și îți oferim suport rapid, comunicare directă și un început simplu.
+      Alege platforma din meniul din stânga și trimite-ne mesaj pe WhatsApp.
     </p>
 
-    <a class="main-btn" href="#aplicare">
-      Aplică
-    </a>
-  </section>
-
-  <section class="benefits">
-    <h2>De ce Project X?</h2>
-
-    <div class="grid">
-      <div>Program flexibil</div>
-      <div>Plată săptămânală</div>
-      <div>Suport rapid</div>
-      <div>Comunicare directă</div>
+    <div class="contact">
+      <p>Telefon: 0720 567 098</p>
+      <p>Email: projectxedelivery@gmail.com</p>
     </div>
   </section>
-
-  <section id="aplicare" class="apply-section">
-    <h2>Alege platforma pe care vrei să livrezi</h2>
-    <p class="apply-text">După ce alegi platforma, se deschide automat WhatsApp.</p>
-
-    <div class="platform-buttons">
-      <a href="https://wa.me/40720567098?text=Salut!%20Vreau%20sa%20lucrez%20cu%20Project%20X%20Delivery%20pe%20platforma%20Wolt." target="_blank">Wolt</a>
-
-      <a href="https://wa.me/40720567098?text=Salut!%20Vreau%20sa%20lucrez%20cu%20Project%20X%20Delivery%20pe%20platforma%20Bolt." target="_blank">Bolt</a>
-
-      <a href="https://wa.me/40720567098?text=Salut!%20Vreau%20sa%20lucrez%20cu%20Project%20X%20Delivery%20pe%20platforma%20Glovo." target="_blank">Glovo</a>
-
-      <a href="https://wa.me/40720567098?text=Salut!%20Vreau%20sa%20lucrez%20cu%20Project%20X%20Delivery%20pe%20platforma%20Uber%20Eats." target="_blank">Uber Eats</a>
-    </div>
-  </section>
-
-  <footer>
-    <p>Project X Delivery • București</p>
-    <p>Telefon: 0720 567 098</p>
-    <p>Email: projectxedelivery@gmail.com</p>
-  </footer>
 
 </body>
 </html>
