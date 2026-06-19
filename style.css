@@ -4,119 +4,8 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-  color: white;
-  background: #090011;
-}
-
-.hero {
-  min-height: 100vh;
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background:
-    radial-gradient(circle at top left, rgba(57,255,20,0.35), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(190,0,255,0.45), transparent 35%),
-    linear-gradient(135deg, #100018, #2b0045, #050008);
-  overflow: hidden;
-}
-
-.tag {
-  padding: 10px 22px;
-  border: 2px solid #39ff14;
-  border-radius: 30px;
-  color: #39ff14;
-  font-weight: bold;
-  box-shadow: 0 0 20px #39ff14;
-  margin-bottom: 25px;
-}
-
-h1 {
-  font-family: 'Bangers', cursive;
-  font-size: 86px;
-  letter-spacing: 5px;
-  margin: 0;
-  color: #39ff14;
-  text-transform: uppercase;
-  text-shadow:
-    0 0 8px #39ff14,
-    0 0 25px #39ff14,
-    5px 5px 0 #b000ff,
-    8px 8px 0 #000;
-}
-
-.subtitle {
-  font-size: 24px;
-  max-width: 760px;
-  margin: 25px 0 0;
-  text-shadow: 0 0 15px #b000ff;
-}
-
-.btn {
-  margin-top: 35px;
-  display: inline-block;
-  padding: 18px 38px;
-  background: #39ff14;
-  color: #140020;
-  font-size: 22px;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 50px;
-  box-shadow:
-    0 0 15px #39ff14,
-    0 0 40px #39ff14;
-}
-
-.btn:hover {
-  background: #b000ff;
-  color: white;
-  box-shadow:
-    0 0 15px #b000ff,
-    0 0 45px #b000ff;
-  transform: scale(1.06);
-}
-
-.cards {
-  margin-top: 45px;
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.cards div {
-  padding: 18px 24px;
-  border: 1px solid rgba(57,255,20,0.7);
-  border-radius: 18px;
-  background: rgba(255,255,255,0.08);
-  box-shadow: 0 0 20px rgba(176,0,255,0.6);
-  font-weight: bold;
-}
-
-@media (max-width: 650px) {
-  h1 {
-    font-size: 50px;
-  }
-
-  .subtitle {
-    font-size: 18px;
-  }
-
-  .btn {
-    font-size: 18px;
-    padding: 15px 28px;
-  }
-}
-@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
-
-* {
-  box-sizing: border-box;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -124,50 +13,66 @@ body {
   background: #07000d;
   color: white;
   font-family: Arial, sans-serif;
+  padding-left: 240px;
 }
 
-nav {
+.side-menu {
   position: fixed;
+  left: 0;
   top: 0;
-  width: 100%;
-  padding: 18px 35px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(7,0,13,0.75);
-  backdrop-filter: blur(10px);
+  width: 240px;
+  height: 100vh;
+  padding: 35px 22px;
+  background: rgba(7, 0, 13, 0.94);
+  border-right: 2px solid #39ff14;
+  box-shadow: 0 0 35px rgba(176, 0, 255, 0.7);
   z-index: 10;
-  border-bottom: 1px solid rgba(57,255,20,0.4);
 }
 
-.logo {
+.menu-logo {
+  font-family: 'Bangers', cursive;
+  font-size: 38px;
   color: #39ff14;
-  font-weight: bold;
-  font-size: 22px;
-  text-shadow: 0 0 15px #39ff14;
+  text-shadow:
+    0 0 10px #39ff14,
+    3px 3px 0 #b000ff;
+  margin-bottom: 35px;
 }
 
-.main-btn {
+.side-menu p {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.side-menu a {
+  display: block;
+  margin-bottom: 18px;
+  padding: 16px;
+  border-radius: 18px;
+  border: 2px solid #39ff14;
+  color: #39ff14;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 0 18px rgba(57,255,20,0.5);
+}
+
+.side-menu a:hover {
   background: #39ff14;
   color: #16001f;
-  padding: 16px 35px;
-  border-radius: 40px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 0 25px #39ff14;
-  margin-top: 30px;
-  font-size: 22px;
-  display: inline-block;
-}
 }
 
 .hero {
+  position: relative;
   min-height: 100vh;
-  padding: 130px 20px 70px;
+  padding: 70px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   text-align: center;
   background:
     radial-gradient(circle at 20% 20%, rgba(57,255,20,0.35), transparent 28%),
@@ -175,18 +80,22 @@ nav {
     linear-gradient(135deg, #090011, #27003d, #050008);
 }
 
-.badge {
-  border: 2px solid #39ff14;
-  padding: 10px 22px;
-  border-radius: 40px;
-  color: #39ff14;
-  box-shadow: 0 0 25px #39ff14;
-  font-weight: bold;
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(45deg, transparent 48%, rgba(57,255,20,0.08) 49%, transparent 51%),
+    linear-gradient(-45deg, transparent 48%, rgba(176,0,255,0.10) 49%, transparent 51%);
+  background-size: 80px 80px;
+  opacity: 0.8;
 }
 
 h1 {
+  position: relative;
+  z-index: 2;
   font-family: 'Bangers', cursive;
-  font-size: 90px;
+  font-size: 95px;
   letter-spacing: 5px;
   color: #39ff14;
   text-transform: uppercase;
@@ -195,132 +104,112 @@ h1 {
     0 0 35px #39ff14,
     6px 6px 0 #b000ff,
     10px 10px 0 #000;
-  margin: 25px 0 10px;
+  margin: 0;
 }
 
-.hero p {
-  font-size: 24px;
-  max-width: 750px;
+.subtitle {
+  position: relative;
+  z-index: 2;
+  font-size: 26px;
   text-shadow: 0 0 15px #b000ff;
 }
 
-.main-btn {
-  margin-top: 30px;
-  font-size: 21px;
-  display: inline-block;
-}
-
-section {
-  padding: 70px 20px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 38px;
-  color: #39ff14;
-  text-shadow: 0 0 20px #39ff14;
-}
-
-.grid {
-  margin: 35px auto 0;
-  max-width: 950px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-.grid div, .step-box {
-  padding: 25px;
-  border: 1px solid rgba(57,255,20,0.6);
-  border-radius: 22px;
-  background: rgba(255,255,255,0.07);
-  box-shadow: 0 0 25px rgba(176,0,255,0.55);
-  font-weight: bold;
-}
-
-.steps {
-  background: linear-gradient(135deg, #12001e, #050008);
-}
-
-.step-box {
-  max-width: 700px;
-  margin: 35px auto 0;
-  text-align: left;
-}
-
-.step-box p {
-  font-size: 21px;
-}
-
-.step-box span {
-  background: #39ff14;
-  color: #16001f;
-  padding: 8px 14px;
-  border-radius: 50%;
-  margin-right: 12px;
-  font-weight: bold;
-}
-
-footer {
-  padding: 35px 20px;
-  text-align: center;
-  background: #030005;
-  border-top: 1px solid rgba(57,255,20,0.4);
-}
-
-footer p {
-  margin: 8px;
-}
-
-@media (max-width: 800px) {
-  h1 {
-    font-size: 52px;
-  }
-
-  .hero p {
-    font-size: 18px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  nav {
-    padding: 15px 18px;
-  }
-}
-.apply-section {
-  background: linear-gradient(135deg, #160020, #050008);
-}
-
-.apply-text {
-  font-size: 20px;
-  color: white;
-  text-shadow: 0 0 12px #b000ff;
-}
-
-.platform-buttons {
+.platform-cards {
+  position: relative;
+  z-index: 2;
   margin-top: 35px;
   display: flex;
-  gap: 20px;
-  justify-content: center;
+  gap: 22px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-.platform-buttons a {
+.platform-cards div {
   min-width: 170px;
-  padding: 20px 30px;
-  border-radius: 20px;
+  padding: 25px 35px;
+  border-radius: 24px;
   background: rgba(255,255,255,0.08);
   border: 2px solid #39ff14;
   color: #39ff14;
-  text-decoration: none;
-  font-size: 22px;
+  font-size: 26px;
   font-weight: bold;
-  box-shadow: 0 0 25px rgba(57,255,20,0.6);
+  box-shadow: 0 0 30px rgba(176,0,255,0.65);
 }
 
-.platform-buttons a:hover {
-  background: #39ff14;
-  color: #16001f;
+.vehicle {
+  position: absolute;
+  z-index: 1;
+  font-size: 120px;
+  opacity: 0.25;
+  filter: drop-shadow(0 0 18px #39ff14);
+}
+
+.bike {
+  left: 8%;
+  bottom: 18%;
+}
+
+.scooter {
+  right: 10%;
+  top: 22%;
+}
+
+.about {
+  min-height: 100vh;
+  padding: 100px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background:
+    radial-gradient(circle at top right, rgba(57,255,20,0.25), transparent 30%),
+    linear-gradient(135deg, #160020, #050008);
+}
+
+.about h2 {
+  font-size: 48px;
+  color: #39ff14;
+  text-shadow: 0 0 25px #39ff14;
+}
+
+.about p {
+  max-width: 850px;
+  margin: 0 auto;
+  font-size: 23px;
+  line-height: 1.6;
+  text-shadow: 0 0 12px #b000ff;
+}
+
+.contact {
+  margin-top: 35px;
+}
+
+.contact p {
+  font-size: 20px;
+  margin: 10px auto;
+}
+
+@media (max-width: 800px) {
+  body {
+    padding-left: 0;
+  }
+
+  .side-menu {
+    position: relative;
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 55px;
+  }
+
+  .platform-cards {
+    flex-direction: column;
+  }
+
+  .vehicle {
+    font-size: 80px;
+  }
 }
