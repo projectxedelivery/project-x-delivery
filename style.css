@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -11,6 +15,8 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* MENIU STÂNGA */
+
 .menu {
   position: fixed;
   left: 0;
@@ -18,7 +24,7 @@ body {
   width: 270px;
   height: 100vh;
   padding: 28px 24px;
-  background: rgba(5, 0, 10, 0.94);
+  background: rgba(5, 0, 10, 0.95);
   border-right: 1px solid #39ff14;
   box-shadow: 0 0 45px rgba(57,255,20,0.25);
   z-index: 20;
@@ -48,14 +54,13 @@ body {
 .menu a {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 14px;
   margin-bottom: 15px;
-  padding: 15px;
+  padding: 15px 18px;
   border: 1px solid #39ff14;
   color: white;
   text-decoration: none;
-  text-align: center;
   font-weight: bold;
   background: rgba(57,255,20,0.08);
   box-shadow: 0 0 18px rgba(57,255,20,0.35);
@@ -68,21 +73,48 @@ body {
   transform: scale(1.04);
 }
 
-.icon {
-  width: 28px;
-  height: 28px;
+.app-icon {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 10px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
+  font-weight: 900;
   font-size: 18px;
 }
 
-.wolt { color: #00cfff; text-shadow: 0 0 12px #00cfff; }
-.bolt { color: #39ff14; text-shadow: 0 0 12px #39ff14; }
-.glovo { color: #ffd000; text-shadow: 0 0 12px #ffd000; }
-.insta { color: #ff2bd6; text-shadow: 0 0 12px #ff2bd6; }
-.fb { color: #1877f2; text-shadow: 0 0 12px #1877f2; }
+.wolt-icon {
+  background: #00cfff;
+  color: #050008;
+  box-shadow: 0 0 18px #00cfff;
+}
+
+.bolt-icon {
+  background: #39ff14;
+  color: #050008;
+  box-shadow: 0 0 18px #39ff14;
+}
+
+.glovo-icon {
+  background: #ffd000;
+  color: #050008;
+  box-shadow: 0 0 18px #ffd000;
+}
+
+.insta-icon {
+  background: linear-gradient(135deg, #ff2bd6, #b000ff, #ff9900);
+  color: white;
+  box-shadow: 0 0 18px #ff2bd6;
+}
+
+.fb-icon {
+  background: #1877f2;
+  color: white;
+  font-size: 24px;
+  box-shadow: 0 0 18px #1877f2;
+}
 
 .social {
   margin-top: 30px;
@@ -108,17 +140,71 @@ body {
   color: #ddd;
 }
 
+/* MENIU SUS */
+
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 270px;
+  right: 0;
+  height: 68px;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  background: rgba(5, 0, 10, 0.78);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(57,255,20,0.45);
+  box-shadow: 0 0 25px rgba(176,0,255,0.25);
+}
+
+.top-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 18px;
+  border-radius: 18px;
+  transition: 0.3s;
+}
+
+.top-nav a:hover {
+  color: #39ff14;
+  box-shadow: 0 0 18px rgba(57,255,20,0.35);
+}
+
+.top-nav .top-apply {
+  background: #39ff14;
+  color: #090011;
+  box-shadow: 0 0 22px rgba(57,255,20,0.65);
+}
+
+/* STRUCTURĂ */
+
 main {
   margin-left: 270px;
 }
 
-.hero {
+section {
   min-height: 100vh;
+  padding: 100px 50px 90px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 46px;
+  color: #39ff14;
+  text-shadow: 0 0 22px #39ff14;
+}
+
+/* HERO */
+
+.hero {
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
-  padding: 90px 60px;
+  padding: 120px 60px 90px;
   background:
     radial-gradient(circle at 20% 20%, rgba(57,255,20,0.28), transparent 30%),
     radial-gradient(circle at 80% 30%, rgba(176,0,255,0.35), transparent 35%),
@@ -147,7 +233,7 @@ main {
 
 .top-banner {
   position: absolute;
-  top: 25px;
+  top: 88px;
   left: 60px;
   z-index: 4;
   padding: 12px 22px;
@@ -199,27 +285,10 @@ h1 span {
   margin: 35px 0;
 }
 
-.platform-cards,
-.grid {
+.platform-cards {
   display: flex;
   gap: 22px;
   flex-wrap: wrap;
-  justify-content: center;
-}
-
-.platform-cards {
-  justify-content: flex-start;
-}
-
-.platform-cards div,
-.grid div,
-.box,
-.big-box,
-.faq-item {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(57,255,20,0.65);
-  box-shadow: 0 0 28px rgba(176,0,255,0.45);
-  transition: 0.3s;
 }
 
 .platform-cards div {
@@ -228,19 +297,12 @@ h1 span {
   text-align: center;
   font-size: 24px;
   font-weight: bold;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(57,255,20,0.65);
+  box-shadow: 0 0 28px rgba(176,0,255,0.45);
 }
 
-section {
-  min-height: 100vh;
-  padding: 90px 50px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 46px;
-  color: #39ff14;
-  text-shadow: 0 0 22px #39ff14;
-}
+/* SECTIUNI */
 
 .apply-form-section,
 .offer,
@@ -260,13 +322,24 @@ h2 {
     linear-gradient(135deg, #07000d, #12001e);
 }
 
+/* BOXURI */
+
+.box,
+.big-box,
+.grid div,
+.faq-item {
+  background: rgba(5, 0, 10, 0.94);
+  border: 2px solid #39ff14;
+  box-shadow: 0 0 45px rgba(57,255,20,0.28), 0 0 35px rgba(176,0,255,0.25);
+  transition: 0.3s;
+}
+
 .box {
   width: 100%;
   max-width: 620px;
   margin: 0 auto;
   padding: 35px;
   border-radius: 28px;
-  border: 2px solid #39ff14;
 }
 
 .big-box {
@@ -285,14 +358,21 @@ h2 {
   padding: 17px 18px;
   border-radius: 16px;
   border: 1px solid #39ff14;
-  background: rgba(0,0,0,0.65);
+  background: rgba(57,255,20,0.08);
   color: white;
   font-size: 17px;
   outline: none;
+  box-shadow: 0 0 18px rgba(57,255,20,0.35);
+  font-weight: bold;
 }
 
 .box input::placeholder {
   color: #ccc;
+}
+
+.box select option {
+  background: #090011;
+  color: white;
 }
 
 .box button {
@@ -306,6 +386,7 @@ h2 {
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 0 25px rgba(57,255,20,0.75);
+  transition: 0.3s;
 }
 
 .box button:hover {
@@ -331,6 +412,8 @@ h2 {
   line-height: 1.5;
 }
 
+/* TEXT BOX */
+
 .big-box p,
 .big-box h3,
 .grid p {
@@ -347,9 +430,15 @@ h2 {
   color: #39ff14;
 }
 
+/* GRID */
+
 .grid {
   max-width: 1000px;
   margin: 35px auto 0;
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .grid div {
@@ -357,6 +446,8 @@ h2 {
   padding: 28px;
   border-radius: 24px;
 }
+
+/* FAQ */
 
 .faq-item {
   max-width: 800px;
@@ -389,6 +480,8 @@ h2 {
   display: block;
 }
 
+/* FOOTER */
+
 footer {
   padding: 45px 20px;
   text-align: center;
@@ -399,6 +492,8 @@ footer {
 footer h3 {
   color: #39ff14;
 }
+
+/* WHATSAPP */
 
 .whatsapp-float {
   position: fixed;
@@ -418,6 +513,8 @@ footer h3 {
   z-index: 50;
 }
 
+/* TELEFON */
+
 @media (max-width: 900px) {
   .menu {
     position: relative;
@@ -429,6 +526,15 @@ footer h3 {
   .menu-contact {
     position: static;
     margin-top: 25px;
+  }
+
+  .top-nav {
+    position: sticky;
+    left: 0;
+    top: 0;
+    height: auto;
+    padding: 12px;
+    flex-wrap: wrap;
   }
 
   main {
@@ -474,59 +580,4 @@ footer h3 {
   section {
     padding: 70px 25px;
   }
-}
-.menu a {
-  justify-content: flex-start;
-  padding-left: 22px;
-}
-
-.app-icon {
-  width: 34px;
-  height: 34px;
-  min-width: 34px;
-  border-radius: 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 12px;
-  font-weight: 900;
-  font-size: 18px;
-  color: #050008;
-  box-shadow: 0 0 18px currentColor;
-}
-
-.wolt-icon {
-  background: #00cfff;
-  color: #00cfff;
-  text-shadow: 0 0 10px #00cfff;
-}
-
-.wolt-icon::first-letter {
-  color: #050008;
-}
-
-.bolt-icon {
-  background: #39ff14;
-  color: #050008;
-  text-shadow: 0 0 10px #39ff14;
-}
-
-.glovo-icon {
-  background: #ffd000;
-  color: #050008;
-  text-shadow: 0 0 10px #ffd000;
-}
-
-.insta-icon {
-  background: linear-gradient(135deg, #ff2bd6, #b000ff, #ff9900);
-  color: white;
-  text-shadow: 0 0 10px #ff2bd6;
-}
-
-.fb-icon {
-  background: #1877f2;
-  color: white;
-  font-family: Arial, sans-serif;
-  font-size: 24px;
-  text-shadow: 0 0 10px #1877f2;
 }
