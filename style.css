@@ -475,3 +475,58 @@ footer h3 {
     padding: 70px 25px;
   }
 }
+.menu a {
+  justify-content: flex-start;
+  padding-left: 22px;
+}
+
+.app-icon {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  font-weight: 900;
+  font-size: 18px;
+  color: #050008;
+  box-shadow: 0 0 18px currentColor;
+}
+
+.wolt-icon {
+  background: #00cfff;
+  color: #00cfff;
+  text-shadow: 0 0 10px #00cfff;
+}
+
+.wolt-icon::first-letter {
+  color: #050008;
+}
+
+.bolt-icon {
+  background: #39ff14;
+  color: #050008;
+  text-shadow: 0 0 10px #39ff14;
+}
+
+.glovo-icon {
+  background: #ffd000;
+  color: #050008;
+  text-shadow: 0 0 10px #ffd000;
+}
+
+.insta-icon {
+  background: linear-gradient(135deg, #ff2bd6, #b000ff, #ff9900);
+  color: white;
+  text-shadow: 0 0 10px #ff2bd6;
+}
+
+.fb-icon {
+  background: #1877f2;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  text-shadow: 0 0 10px #1877f2;
+}
