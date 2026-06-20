@@ -573,3 +573,32 @@ footer h3 {
   color: white;
   box-shadow: 0 0 20px rgba(37,211,102,0.6);
 }
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  padding: 18px 32px;
+  border-radius: 16px;
+  background: #ff6a00;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 25px rgba(255,106,0,0.65);
+  transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.05);
+  background: #ff8c1a;
+}
+
+.whatsapp-btn.secondary {
+  background: rgba(255,106,0,0.12);
+  border: 1px solid #ff6a00;
+}
