@@ -1,200 +1,539 @@
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project X Delivery</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
-<nav class="top-menu">
-  <div class="logo">Project X <span>Delivery</span></div>
+* {
+  box-sizing: border-box;
+}
 
-  <div class="nav-links">
-    <a href="#acasa">Acasă</a>
-    <a href="#angajare">Angajare</a>
-    <a href="#calculator">Calculator</a>
-    <a href="#oferta">Ofertă</a>
-    <a href="#faq">FAQ</a>
-    <a class="apply-btn" href="#angajare">Aplică</a>
-  </div>
-</nav>
+html {
+  scroll-behavior: smooth;
+}
 
-<main>
+body {
+  margin: 0;
+  background: #050505;
+  color: white;
+  font-family: Arial, sans-serif;
+}
 
-<section class="hero" id="acasa">
-  <div class="hero-content">
-    <div class="badge">București • Flotă curieri</div>
+.top-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 78px;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 45px;
+  background: rgba(5, 5, 5, 0.86);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 106, 0, 0.55);
+  box-shadow: 0 0 30px rgba(255, 106, 0, 0.22);
+}
 
-    <h1>Project X <span>Delivery</span></h1>
+.logo {
+  font-family: 'Bangers', cursive;
+  text-decoration: none;
+  color: #ff6a00;
+  font-size: 34px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 12px #ff6a00, 3px 3px 0 #000;
+}
 
-    <p>Livrează mai mult. Câștigă mai bine. Alătură-te echipei Project X Delivery.</p>
+.logo span {
+  color: white;
+  text-shadow: 0 0 12px #ff8c1a;
+}
 
-    <div class="platform-cards">
-      <div>WOLT</div>
-      <div>BOLT</div>
-      <div>GLOVO</div>
-    </div>
-  </div>
-</section>
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
 
-<section class="apply-section" id="angajare">
-  <h2>Aplică rapid</h2>
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 16px;
+  border-radius: 16px;
+  transition: 0.3s;
+}
 
-  <div class="box">
-    <input type="text" id="nume" placeholder="Nume și prenume">
-    <input type="tel" id="telefon" placeholder="Număr de telefon">
-    <input type="email" id="email" placeholder="Email">
+.nav-links a:hover {
+  color: #ff8c1a;
+  box-shadow: 0 0 18px rgba(255, 106, 0, 0.35);
+}
 
-    <select id="platforma">
-      <option value="">Alege platforma</option>
-      <option value="Wolt">Wolt</option>
-      <option value="Bolt">Bolt</option>
-      <option value="Glovo">Glovo</option>
-    </select>
+.nav-links .apply-btn {
+  background: #ff6a00;
+  color: #050505;
+  box-shadow: 0 0 24px rgba(255, 106, 0, 0.7);
+}
 
-    <select id="transport">
-      <option value="">Mijloc de transport</option>
-      <option value="Bicicletă">Bicicletă</option>
-      <option value="Scuter">Scuter</option>
-      <option value="Mașină">Mașină</option>
-    </select>
+main {
+  width: 100%;
+}
 
-    <button onclick="trimiteAplicarea()">Trimite aplicația pe WhatsApp</button>
-  </div>
-</section>
+section {
+  min-height: 100vh;
+  padding: 115px 45px 90px;
+  text-align: center;
+}
 
-<section class="calculator" id="calculator">
-  <h2>Simulator venit curier</h2>
+h2 {
+  font-size: 48px;
+  color: #ff6a00;
+  text-shadow: 0 0 22px #ff6a00;
+  margin-bottom: 22px;
+}
 
-  <div class="box">
-    <input type="number" id="venit" placeholder="Venit estimat din aplicație, ex: 5000 lei">
+.section-subtitle {
+  max-width: 760px;
+  margin: 0 auto 32px;
+  color: #ddd;
+  font-size: 19px;
+  line-height: 1.6;
+}
 
-    <select id="tipComision">
-      <option value="7">Prima lună - comision 7%</option>
-      <option value="10">După prima lună - comision 10%</option>
-    </select>
+.hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255,106,0,0.28), transparent 28%),
+    radial-gradient(circle at 80% 35%, rgba(255,140,26,0.16), transparent 34%),
+    linear-gradient(135deg, #050505, #160800, #050505);
+}
 
-    <input type="number" id="costCarteMunca" placeholder="Suma pentru cartea de muncă, ex: 600 lei">
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("delivery-riders.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 58%;
+  opacity: 0.92;
+  z-index: 1;
+}
 
-    <button onclick="calculeazaComision()">Calculează transparent</button>
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(90deg, rgba(5,5,5,0.98), rgba(5,5,5,0.70), rgba(5,5,5,0.15));
+}
 
-    <div class="result-box" id="rezultat">
-      Introdu venitul și suma pentru cartea de muncă.
-    </div>
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 790px;
+  text-align: left;
+}
 
-    <p class="note">Calculator orientativ. Fiecare curier poate introduce suma proprie.</p>
-  </div>
-</section>
+.badge {
+  display: inline-block;
+  padding: 10px 22px;
+  border: 1px solid #ff6a00;
+  color: #ff8c1a;
+  border-radius: 30px;
+  box-shadow: 0 0 22px rgba(255,106,0,0.55);
+  font-weight: bold;
+  margin-bottom: 24px;
+}
 
-<section class="offer" id="oferta">
-  <h2>Oferta noastră</h2>
+h1 {
+  font-family: 'Bangers', cursive;
+  font-size: 108px;
+  line-height: 0.85;
+  letter-spacing: 5px;
+  margin: 0;
+  color: #ff6a00;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px #ff6a00, 0 0 32px #ff6a00, 7px 7px 0 #000;
+}
 
-  <div class="big-box">
-    <h3>Începe cu Project X Delivery</h3>
-    <p>Colaborare cu <strong>carte de muncă</strong>, suport constant și condiții clare.</p>
-    <p>În prima lună comisionul este de <strong>7%</strong>, apoi revine la <strong>10%</strong>.</p>
-    <p>După primele <strong>300 de comenzi</strong>, primești bonus de <strong>300 lei</strong>.</p>
-  </div>
-</section>
+h1 span {
+  display: block;
+  color: white;
+  text-shadow: 0 0 12px #ff8c1a, 0 0 32px #ff6a00, 7px 7px 0 #000;
+}
 
-<section class="numbers">
-  <h2>Project X în cifre</h2>
+.hero-content p {
+  font-size: 27px;
+  line-height: 1.5;
+  margin: 34px 0;
+  max-width: 720px;
+}
 
-  <div class="grid">
-    <div><h3>50+</h3><p>Curieri în echipă</p></div>
-    <div><h3>24/7</h3><p>Suport rapid</p></div>
-    <div><h3>7%</h3><p>Comision prima lună</p></div>
-    <div><h3>300 lei</h3><p>Bonus disponibil</p></div>
-  </div>
-</section>
+.hero-actions {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
 
-<section class="faq" id="faq">
-  <h2>Întrebări frecvente</h2>
+.primary-btn,
+.secondary-btn,
+.call-btn {
+  display: inline-block;
+  padding: 16px 28px;
+  border-radius: 18px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
 
-  <div class="faq-item">
-    <button onclick="toggleFaq(this)">Cum aplic?</button>
-    <p>Completezi formularul de angajare sau apeși pe butonul Aplică.</p>
-  </div>
+.primary-btn,
+.call-btn {
+  background: #ff6a00;
+  color: #050505;
+  box-shadow: 0 0 24px rgba(255,106,0,0.75);
+}
 
-  <div class="faq-item">
-    <button onclick="toggleFaq(this)">Care este comisionul?</button>
-    <p>Comisionul este 7% în prima lună, apoi revine la 10%.</p>
-  </div>
+.secondary-btn {
+  border: 1px solid #ff6a00;
+  color: white;
+  background: rgba(255,106,0,0.08);
+  box-shadow: 0 0 18px rgba(255,106,0,0.28);
+}
 
-  <div class="faq-item">
-    <button onclick="toggleFaq(this)">Există bonus?</button>
-    <p>Da, primești 300 lei bonus după finalizarea primelor 300 de comenzi.</p>
-  </div>
+.primary-btn:hover,
+.secondary-btn:hover,
+.call-btn:hover {
+  transform: translateY(-4px);
+  background: #ff8c1a;
+  color: #050505;
+}
 
-  <div class="faq-item">
-    <button onclick="toggleFaq(this)">În ce oraș activați?</button>
-    <p>Momentan activăm în București și zone apropiate.</p>
-  </div>
-</section>
+.platform-cards,
+.grid {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-<footer>
-  <h3>Project X Delivery</h3>
-  <p>București</p>
-  <p>Telefon: 0720 567 098</p>
-  <p>Email: projectxedelivery@gmail.com</p>
+.platform-cards {
+  justify-content: flex-start;
+}
 
-  <div class="footer-social">
-    <a href="https://www.instagram.com/projectxedelivery/" target="_blank">Instagram</a>
-    <a href="https://web.facebook.com/profile.php?id=61590673456642" target="_blank">Facebook</a>
-  </div>
-</footer>
+.platform-cards div,
+.grid div,
+.box,
+.big-box,
+.faq-item {
+  background: rgba(10, 10, 10, 0.88);
+  border: 1px solid rgba(255,106,0,0.65);
+  box-shadow: 0 0 30px rgba(255,106,0,0.28), 0 0 35px rgba(0,0,0,0.35);
+  transition: 0.3s;
+}
 
-</main>
+.platform-cards div {
+  min-width: 160px;
+  padding: 18px 30px;
+  text-align: center;
+  font-size: 23px;
+  font-weight: bold;
+  border-radius: 18px;
+}
 
-<a class="whatsapp-float" href="https://wa.me/40720567098?text=Salut!%20Vreau%20mai%20multe%20detalii%20despre%20Project%20X%20Delivery." target="_blank">💬</a>
+.platform-cards span {
+  color: #ff6a00;
+  text-shadow: 0 0 12px #ff6a00;
+  margin-right: 8px;
+}
 
-<script>
-function trimiteAplicarea() {
-  const nume = document.getElementById("nume").value;
-  const telefon = document.getElementById("telefon").value;
-  const email = document.getElementById("email").value;
-  const platforma = document.getElementById("platforma").value;
-  const transport = document.getElementById("transport").value;
+.platform-cards div:hover,
+.grid div:hover,
+.box:hover,
+.big-box:hover,
+.faq-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 38px rgba(255,106,0,0.48);
+}
 
-  if (!nume || !telefon || !email || !platforma || !transport) {
-    alert("Te rog completează toate câmpurile.");
-    return;
+.numbers,
+.calculator,
+.area {
+  background:
+    radial-gradient(circle at top right, rgba(255,106,0,0.18), transparent 30%),
+    linear-gradient(135deg, #090909, #160800, #050505);
+}
+
+.apply-section,
+.offer,
+.reviews,
+.faq {
+  background:
+    radial-gradient(circle at bottom left, rgba(255,106,0,0.18), transparent 30%),
+    linear-gradient(135deg, #050505, #0e0e0e, #050505);
+}
+
+.box {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 36px;
+  border-radius: 28px;
+  border: 2px solid #ff6a00;
+}
+
+.big-box {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 38px;
+  border-radius: 28px;
+  text-align: left;
+  border: 2px solid rgba(255,106,0,0.75);
+}
+
+.center {
+  text-align: center;
+}
+
+.box input,
+.box select {
+  width: 100%;
+  display: block;
+  margin-bottom: 18px;
+  padding: 17px 18px;
+  border-radius: 16px;
+  border: 1px solid #ff6a00;
+  background: rgba(255,106,0,0.08);
+  color: white;
+  font-size: 17px;
+  outline: none;
+  box-shadow: 0 0 18px rgba(255,106,0,0.28);
+  font-weight: bold;
+}
+
+.box input::placeholder {
+  color: #cfcfcf;
+}
+
+.box select option {
+  background: #080808;
+  color: white;
+}
+
+.box button {
+  width: 100%;
+  padding: 18px;
+  border: 1px solid #ff6a00;
+  border-radius: 18px;
+  background: #ff6a00;
+  color: #050505;
+  font-size: 19px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(255,106,0,0.75);
+  transition: 0.3s;
+}
+
+.box button:hover {
+  background: #ff8c1a;
+  transform: translateY(-3px);
+}
+
+.result-box {
+  margin-top: 22px;
+  padding: 22px;
+  border-radius: 18px;
+  background: rgba(255,106,0,0.08);
+  border: 1px solid #ff6a00;
+  font-size: 20px;
+  line-height: 1.7;
+  box-shadow: 0 0 18px rgba(255,106,0,0.28);
+}
+
+.note {
+  color: #ddd;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.big-box p,
+.big-box h3,
+.grid p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.big-box h3,
+.grid h3,
+.reviews h3 {
+  color: #ff6a00;
+  text-shadow: 0 0 14px rgba(255,106,0,0.65);
+}
+
+.big-box strong {
+  color: #ff8c1a;
+}
+
+.grid {
+  max-width: 1050px;
+  margin: 38px auto 0;
+}
+
+.grid div {
+  width: 235px;
+  padding: 30px;
+  border-radius: 24px;
+}
+
+.grid h3 {
+  font-size: 30px;
+  margin: 0 0 12px;
+}
+
+.faq-item {
+  max-width: 850px;
+  margin: 20px auto;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.faq-item button {
+  width: 100%;
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 22px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-item p {
+  display: none;
+  padding: 0 22px 22px;
+  margin: 0;
+  font-size: 18px;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.faq-item.active p {
+  display: block;
+}
+
+footer {
+  padding: 48px 20px;
+  text-align: center;
+  background: #030303;
+  border-top: 1px solid rgba(255,106,0,0.5);
+}
+
+footer h3 {
+  color: #ff6a00;
+  font-size: 28px;
+}
+
+.footer-social {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.footer-social a {
+  color: white;
+  text-decoration: none;
+  border: 1px solid #ff6a00;
+  padding: 12px 18px;
+  border-radius: 16px;
+  box-shadow: 0 0 18px rgba(255,106,0,0.25);
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #ff6a00;
+  color: #050505;
+  font-size: 30px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 30px rgba(255,106,0,0.9);
+  z-index: 120;
+  transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background: #ff8c1a;
+}
+
+@media (max-width: 900px) {
+  .top-menu {
+    position: sticky;
+    height: auto;
+    padding: 14px;
+    flex-direction: column;
+    gap: 12px;
   }
 
-  const mesaj = `Salut! Vreau să aplic pentru Project X Delivery.%0A%0ANume: ${nume}%0ATelefon: ${telefon}%0AEmail: ${email}%0APlatforma dorită: ${platforma}%0AMijloc de transport: ${transport}`;
-
-  window.open(`https://wa.me/40720567098?text=${mesaj}`, "_blank");
-}
-
-function calculeazaComision() {
-  const venit = Number(document.getElementById("venit").value);
-  const procent = Number(document.getElementById("tipComision").value);
-  const costCarteMunca = Number(document.getElementById("costCarteMunca").value) || 0;
-  const rezultat = document.getElementById("rezultat");
-
-  if (!venit || venit <= 0) {
-    rezultat.innerHTML = "Introdu un venit valid.";
-    return;
+  .nav-links {
+    justify-content: center;
   }
 
-  const comision = venit * procent / 100;
-  const sumaFinala = venit - comision - costCarteMunca;
+  section {
+    padding: 70px 24px;
+  }
 
-  rezultat.innerHTML = `
-    <strong>Venit introdus:</strong> ${venit.toFixed(2)} lei<br>
-    <strong>Comision ${procent}%:</strong> ${comision.toFixed(2)} lei<br>
-    <strong>Carte de muncă:</strong> ${costCarteMunca.toFixed(2)} lei<br>
-    <strong>Suma finală rămasă:</strong> ${sumaFinala.toFixed(2)} lei<br>
-    <strong>Bonus:</strong> 300 lei după primele 300 de comenzi
-  `;
+  .hero {
+    text-align: center;
+    padding-top: 80px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero::before {
+    background-size: 120%;
+    background-position: center bottom;
+    opacity: 0.35;
+  }
+
+  .hero-overlay {
+    background: rgba(5,5,5,0.72);
+  }
+
+  h1 {
+    font-size: 58px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 19px;
+  }
+
+  .hero-actions,
+  .platform-cards,
+  .grid {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grid div {
+    width: 100%;
+    max-width: 360px;
+  }
 }
-
-function toggleFaq(button) {
-  button.parentElement.classList.toggle("active");
-}
-</script>
-
-</body>
-</html>
