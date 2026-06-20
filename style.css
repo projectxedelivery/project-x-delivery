@@ -35,7 +35,7 @@ body {
 
 .logo span,
 footer span {
-  color: #16a34a;
+  color: #dc2626;
 }
 
 .menu {
@@ -51,7 +51,7 @@ footer span {
 }
 
 .menu a:hover {
-  color: #16a34a;
+  color: #dc2626;
 }
 
 .menu-btn {
@@ -64,11 +64,11 @@ footer span {
 .hero {
   padding: 110px 8%;
   text-align: center;
-  background: linear-gradient(180deg, #ffffff, #f6f6f6);
+  background: linear-gradient(180deg, #ffffff, #f7f7f7);
 }
 
 .badge {
-  color: #16a34a;
+  color: #dc2626;
   font-weight: 900;
   margin-bottom: 15px;
 }
@@ -107,7 +107,7 @@ footer span {
 }
 
 .green {
-  background: #16a34a;
+  background: #dc2626;
   color: #ffffff;
 }
 
@@ -136,7 +136,7 @@ footer span {
 }
 
 .stats h3 {
-  color: #16a34a;
+  color: #dc2626;
   font-size: 34px;
 }
 
@@ -186,6 +186,12 @@ footer span {
   font-size: 16px;
 }
 
+.form-box input:focus,
+.form-box select:focus {
+  outline: none;
+  border-color: #dc2626;
+}
+
 .form-box button {
   width: 100%;
   padding: 16px;
@@ -199,14 +205,14 @@ footer span {
 }
 
 .form-box button:hover {
-  background: #16a34a;
+  background: #dc2626;
 }
 
 .result {
   margin-top: 20px;
   padding: 18px;
   background: #f7f7f7;
-  border-left: 4px solid #16a34a;
+  border-left: 4px solid #dc2626;
   border-radius: 10px;
   text-align: left;
   line-height: 1.7;
@@ -246,7 +252,7 @@ footer span {
 .social-card {
   min-height: 365px;
   padding: 42px 30px;
-  background: rgba(255,255,255,0.92);
+  background: rgba(255,255,255,0.95);
   color: #111111;
   text-decoration: none;
   border-radius: 30px;
@@ -274,19 +280,14 @@ footer span {
   justify-content: center;
   font-size: 44px;
   font-weight: 900;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  box-shadow: 0 15px 35px rgba(220,38,38,0.28);
 }
 
-.whatsapp {
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-}
-
-.instagram {
-  background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
-}
-
+.whatsapp,
+.instagram,
 .facebook {
-  background: linear-gradient(135deg, #3b82f6, #1877f2);
+  background: linear-gradient(135deg, #ef4444, #dc2626);
 }
 
 .social-card h3 {
@@ -320,7 +321,7 @@ footer span {
   display: block;
   width: 70px;
   height: 3px;
-  background: #16a34a;
+  background: #dc2626;
   margin: 18px auto 35px;
 }
 
@@ -376,6 +377,10 @@ footer span {
   cursor: pointer;
 }
 
+.faq-item button:hover {
+  color: #dc2626;
+}
+
 .faq-item p {
   display: none;
   padding: 0 20px 20px;
@@ -423,13 +428,18 @@ footer p {
   font-weight: 900;
 }
 
+.footer-social a:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
 .whatsapp-float {
   position: fixed;
   right: 24px;
   bottom: 24px;
   width: 62px;
   height: 62px;
-  background: #16a34a;
+  background: #dc2626;
   color: #ffffff;
   border-radius: 50%;
   text-decoration: none;
@@ -439,6 +449,10 @@ footer p {
   font-size: 26px;
   box-shadow: 0 12px 32px rgba(0,0,0,0.25);
   z-index: 999;
+}
+
+.whatsapp-float:hover {
+  background: #111111;
 }
 
 @media (max-width: 900px) {
