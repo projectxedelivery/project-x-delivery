@@ -1,69 +1,163 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project X Delivery</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <header class="navbar">
-    <div class="logo">PROJECT X DELIVERY</div>
+  <header class="header">
+    <div class="logo">
+      <span>PROJECT X</span>
+      <small>DELIVERY</small>
+    </div>
 
     <button class="menu-btn" id="menuBtn">☰</button>
 
-    <nav id="navMenu">
+    <nav class="nav" id="navMenu">
       <a href="#acasa">Acasă</a>
-      <a href="#angajare">Angajare</a>
+      <a href="#despre">Despre</a>
       <a href="#calculator">Calculator</a>
+      <a href="#angajare">Angajare</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <section class="hero" id="acasa">
-    <div class="hero-content">
-      <h1>Angajăm curieri</h1>
-      <p>Aplică rapid pentru Wolt, Bolt Food și Glovo prin Project X Delivery.</p>
-      <a href="https://projectxedelivery.github.io/projectxdelivery/" class="btn">Aplică pe site</a>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content reveal">
+      <p class="badge">Wolt • Bolt Food • Glovo</p>
+
+      <h1>Angajăm curieri în București</h1>
+
+      <p class="hero-text">
+        Aplică rapid online și intră în echipa Project X Delivery.
+        Program flexibil, suport rapid și colaborare simplă.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#angajare" class="btn primary">Aplică acum</a>
+        <a href="#calculator" class="btn secondary">Calculează venitul</a>
+      </div>
     </div>
   </section>
 
-  <section class="section" id="angajare">
-    <h2>De ce să aplici?</h2>
+  <section class="section" id="despre">
+    <div class="section-title reveal">
+      <h2>De ce Project X Delivery?</h2>
+      <p>Un sistem simplu pentru curieri care vor să înceapă rapid.</p>
+    </div>
 
     <div class="cards">
-      <div class="card">Program flexibil</div>
-      <div class="card">Câștiguri transparente</div>
-      <div class="card">Suport rapid</div>
-      <div class="card">Aplicare simplă online</div>
+      <div class="card reveal">
+        <h3>Program flexibil</h3>
+        <p>Lucrezi în funcție de timpul tău și îți organizezi singur programul.</p>
+      </div>
+
+      <div class="card reveal">
+        <h3>Suport rapid</h3>
+        <p>Primești ajutor pentru pașii de început și pentru întrebările importante.</p>
+      </div>
+
+      <div class="card reveal">
+        <h3>Aplicare online</h3>
+        <p>Completezi formularul rapid, iar noi te contactăm cât mai repede.</p>
+      </div>
     </div>
   </section>
 
-  <section class="section calculator" id="calculator">
-    <h2>Calculator venit curier</h2>
+  <section class="section stats-section">
+    <div class="stats">
+      <div class="stat reveal">
+        <h3 class="counter" data-target="100">0</h3>
+        <p>Curieri</p>
+      </div>
 
-    <input type="number" id="zile" placeholder="Zile lucrate pe săptămână">
-    <input type="number" id="castig" placeholder="Câștig pe zi">
-    <input type="number" id="cash" placeholder="Cash în aplicație">
+      <div class="stat reveal">
+        <h3 class="counter" data-target="5000">0</h3>
+        <p>Livrări</p>
+      </div>
 
-    <button onclick="calculeazaVenit()">Calculează</button>
+      <div class="stat reveal">
+        <h3>24/7</h3>
+        <p>Suport</p>
+      </div>
+    </div>
+  </section>
 
-    <div class="rezultat" id="rezultat">
-      Completează câmpurile pentru calcul.
+  <section class="section calculator-section" id="calculator">
+    <div class="section-title reveal">
+      <h2>Calculator venit curier</h2>
+      <p>Calculează rapid o estimare pentru câștigul tău.</p>
+    </div>
+
+    <div class="calculator reveal">
+      <input type="number" id="zile" placeholder="Zile lucrate pe săptămână" />
+      <input type="number" id="castig" placeholder="Câștig mediu pe zi / lei" />
+      <input type="number" id="cash" placeholder="Cash în aplicație / lei" />
+
+      <button onclick="calculeazaVenit()">Calculează</button>
+
+      <div class="rezultat" id="rezultat">
+        Completează câmpurile pentru a vedea estimarea.
+      </div>
+    </div>
+  </section>
+
+  <section class="section platforms" id="angajare">
+    <div class="section-title reveal">
+      <h2>Aplică pentru platformele de delivery</h2>
+      <p>Project X Delivery colaborează cu curieri pentru platforme cunoscute.</p>
+    </div>
+
+    <div class="platform-grid">
+      <div class="platform-card reveal">
+        <span>🟡</span>
+        <h3>Glovo</h3>
+      </div>
+
+      <div class="platform-card reveal">
+        <span>🔵</span>
+        <h3>Wolt</h3>
+      </div>
+
+      <div class="platform-card reveal">
+        <span>🟢</span>
+        <h3>Bolt Food</h3>
+      </div>
+    </div>
+
+    <div class="apply-box reveal">
+      <h3>Vrei să începi?</h3>
+      <p>Aplică direct pe site. Este cea mai rapidă metodă.</p>
+      <a href="https://projectxedelivery.github.io/projectxdelivery/" class="btn primary">
+        Aplică pe site
+      </a>
     </div>
   </section>
 
   <section class="section contact" id="contact">
-    <h2>Contact</h2>
-    <p>Telefon: 0720 567 098</p>
-    <p>Email: projectxedelivery@gmail.com</p>
+    <div class="section-title reveal">
+      <h2>Contact</h2>
+      <p>Ai întrebări? Scrie-ne direct.</p>
+    </div>
 
-    <a href="https://wa.me/40720567098" class="btn">Scrie pe WhatsApp</a>
+    <div class="contact-box reveal">
+      <p><strong>Telefon:</strong> 0720 567 098</p>
+      <p><strong>Email:</strong> projectxedelivery@gmail.com</p>
+
+      <a href="https://wa.me/40720567098" class="btn primary">
+        Scrie pe WhatsApp
+      </a>
+    </div>
   </section>
 
   <footer>
-    <p>© 2026 Project X Delivery</p>
+    <p>© 2026 Project X Delivery. Toate drepturile rezervate.</p>
   </footer>
 
   <script src="script.js"></script>
