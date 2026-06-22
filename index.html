@@ -6,99 +6,120 @@
   <title>Project X Delivery</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <header class="header">
-    <a href="#acasa" class="brand"><span class="brand-mark">X</span><span>Project X Delivery</span></a>
-    <button class="menu-btn" id="menuBtn" aria-label="Deschide meniul">☰</button>
+    <div class="logo">
+      <div class="logo-box">X</div>
+      <span>PROJECT X DELIVERY</span>
+    </div>
+
     <nav class="nav" id="navMenu">
-      <a href="#acasa">Acasă</a><a href="#platforme">Platforme</a><a href="#formular">Aplicare</a><a href="#contact">Contact</a>
+      <a href="#acasa">Acasă</a>
+      <a href="#platforme">Platforme</a>
+      <a href="#aplicare">Aplicare</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <a class="header-btn" href="#formular">Aplică</a>
+
+    <a href="#aplicare" class="apply-top">Aplică</a>
+
+    <button class="menu-btn" id="menuBtn">☰</button>
   </header>
-  <main>
-    <section class="hero" id="acasa">
-      <div class="hero-box">
-        <p class="eyebrow">Angajăm curieri în București</p>
-        <h1>Tu livrezi.<br><span>Noi te susținem.</span></h1>
-        <p class="hero-text">
-Aplicare rapidă. Suport real. Începe să livrezi fără bătăi de cap.
-</p>
-        <div class="hero-actions"><a class="btn primary" href="#formular">Aplică acum</a><a class="btn secondary" href="https://wa.me/40720567098?text=Salut!%20Vreau%20detalii%20despre%20Project%20X%20Delivery." target="_blank">WhatsApp</a></div>
+
+  <main id="acasa" class="hero">
+    <section class="hero-text">
+      <h1>LIVRĂM MAI MULT <span>DECÂT COLETE.</span></h1>
+      <p>Livrăm rapid, sigur și la timp. Oriunde, oricând ai nevoie.</p>
+
+      <div class="hero-buttons">
+        <a href="#aplicare" class="btn-red">Aplică acum</a>
+        <a href="https://wa.me/40720567098" class="btn-dark" target="_blank">WhatsApp</a>
       </div>
     </section>
-</section> <!-- se închide HERO -->
 
-<section class="offer-section">
+    <section class="offer-box">
+      <h2>🔥 OFERTĂ DE START</h2>
 
-  <h2 class="offer-title">🔥 OFERTĂ DE START</h2>
-
-  <div class="offer-grid">
-
-    <div class="offer-item">
-      🔥 <strong>Prima lună cu doar 7% comision</strong>
-    </div>
-
-    <div class="offer-item">
-      🎁 <strong>Bonus recomandare curier</strong><br>
-      Primești bonus pentru fiecare curier recomandat.
-    </div>
-
-    <div class="offer-item">
-      💰 <strong>Bonus 250 LEI</strong><br>
-      La primele 300 de comenzi finalizate.
-    </div>
-
-    <div class="offer-item">
-      🕒 <strong>Program flexibil</strong><br>
-      Livrezi când dorești.
-    </div>
-
-    <div class="offer-item">
-      🎧 <strong>Suport dedicat</strong><br>
-      Suntem alături de tine.
-    </div>
-
-  </div>
-
-</section>
-
-<section class="platform-strip">
-    <section class="platform-strip" id="platforme">
-      <div class="platform-mini glovo"><span>📍</span><strong>Glovo</strong></div>
-      <div class="platform-mini wolt"><span>🚴</span><strong>Wolt</strong></div>
-      <div class="platform-mini bolt"><span>⚡</span><strong>Bolt Food</strong></div>
+      <div class="offer-item">🔥 <strong>Prima lună cu doar 7% comision</strong></div>
+      <div class="offer-item">🎁 <strong>Bonus recomandare curier</strong><br><span>Primești bonus pentru fiecare curier recomandat.</span></div>
+      <div class="offer-item">💰 <strong>Bonus 250 LEI</strong><br><span>La primele 300 de comenzi finalizate.</span></div>
+      <div class="offer-item">🕒 <strong>Program flexibil</strong><br><span>Livrezi când dorești.</span></div>
+      <div class="offer-item">🎧 <strong>Suport dedicat</strong><br><span>Suntem alături de tine.</span></div>
     </section>
-    <section class="stats">
-      <div><strong>50+</strong><span>Curieri activi</span></div>
-      <div><strong>5000+</strong><span>Comenzi livrate</span></div>
-      <div><strong>24/7</strong><span>Suport rapid</span></div>
-    </section>
-    <section class="apply-section" id="formular">
-      <div class="apply-copy">
-        <h2>Completează datele</h2>
-        <p>Alegi platforma, lași datele tale, iar mesajul se trimite automat pe WhatsApp. Pentru Glovo poți aplica și prin linkul de referral.</p>
-        <div class="quick-points"><span>✅ Conturi deschise rapid</span><span>✅ Suport la început</span><span>✅ Program flexibil</span></div>
-        <a class="referral-link" href="https://to.glovoapp.com/a/kh3jq07" target="_blank">Aplică direct prin referral Glovo</a>
+
+    <section id="platforme" class="cards">
+      <div class="card">
+        <div class="icon">📍</div>
+        <h3 class="glovo">Glovo</h3>
+        <p>Comenzi multiple</p>
       </div>
-      <form class="apply-form" id="applyForm">
-        <input type="text" id="nume" placeholder="Nume complet" required />
-        <input type="tel" id="telefon" placeholder="Telefon" required />
-        <select id="platforma" required><option value="">Alege platforma</option><option value="Glovo">Glovo</option><option value="Wolt">Wolt</option><option value="Bolt Food">Bolt Food</option></select>
-        <select id="vehicul" required><option value="">Vehicul</option><option value="Bicicletă">Bicicletă</option><option value="Scuter">Scuter</option><option value="Mașină">Mașină</option></select>
+
+      <div class="card">
+        <div class="icon">🚴</div>
+        <h3 class="wolt">Wolt</h3>
+        <p>Comenzi multiple</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h3 class="bolt">Bolt Food</h3>
+        <p>Comenzi multiple</p>
+      </div>
+
+      <div class="card stat">
+        <h3>50+</h3>
+        <p>Curieri activi</p>
+      </div>
+
+      <div class="card stat">
+        <h3>5000+</h3>
+        <p>Comenzi livrate</p>
+      </div>
+
+      <div class="card stat">
+        <h3>24/7</h3>
+        <p>Suport rapid</p>
+      </div>
+    </section>
+
+    <section id="aplicare" class="form-box">
+      <h2>Completează datele</h2>
+      <p>Alegi platforma, lași datele tale, iar mesajul se trimite automat pe WhatsApp.</p>
+
+      <form id="applyForm">
+        <input type="text" id="nume" placeholder="Numele tău" required />
+        <input type="tel" id="telefon" placeholder="Număr de telefon" required />
+
+        <select id="platforma" required>
+          <option value="">Alege platforma</option>
+          <option value="Glovo">Glovo</option>
+          <option value="Wolt">Wolt</option>
+          <option value="Bolt Food">Bolt Food</option>
+        </select>
+
+        <select id="vehicul" required>
+          <option value="">Alege vehiculul</option>
+          <option value="Bicicletă">Bicicletă</option>
+          <option value="Scuter">Scuter</option>
+          <option value="Mașină">Mașină</option>
+        </select>
+
         <input type="text" id="oras" placeholder="Oraș" value="București" required />
+
         <button type="submit">Trimite pe WhatsApp</button>
-        <small>Nu salvăm datele pe site. Se deschide WhatsApp cu mesajul completat.</small>
       </form>
+
+      <small>Nu salvăm datele pe site. Se deschide WhatsApp cu mesajul completat.</small>
     </section>
-    <section class="benefits">
-      <article><span>⏰</span><h3>Flexibil</h3><p>Lucrezi în ritmul tău.</p></article>
-      <article><span>💸</span><h3>Câștiguri</h3><p>Venit în funcție de activitate.</p></article>
-      <article><span>🎧</span><h3>Suport</h3><p>Primești ajutor la început.</p></article>
-    </section>
-    <section class="contact" id="contact"><h2>Contact</h2><p>Telefon: <strong>0720 567 098</strong></p><p>Email: <strong>projectxedelivery@gmail.com</strong></p><div class="socials"><a href="https://web.facebook.com/profile.php?id=61590673456642" target="_blank">📘 Facebook</a><a href="https://www.instagram.com/projectxedelivery/" target="_blank">📸 Instagram</a><a href="https://wa.me/40720567098" target="_blank">💬 WhatsApp</a></div></section>
   </main>
-  <a class="whatsapp-float" href="https://wa.me/40720567098?text=Salut!%20Vreau%20detalii%20despre%20Project%20X%20Delivery." target="_blank">💬</a>
-  <footer><p>© 2026 Project X Delivery</p></footer>
+
+  <a class="whatsapp-float" href="https://wa.me/40720567098" target="_blank">💬</a>
+
+  <footer id="contact">
+    <p>Project X Delivery • București</p>
+    <p>Telefon: 0720 567 098 • Email: projectxedelivery@gmail.com</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
