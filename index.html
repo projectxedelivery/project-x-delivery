@@ -3,158 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Project X Delivery</title>
+
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<header class="header" id="header">
-  <div class="logo">
-    <span>PROJECT X</span>
-    <small>DELIVERY</small>
-  </div>
-
-  <button class="menu-btn" id="menuBtn" aria-label="Deschide meniul">☰</button>
-
-  <nav class="nav" id="navMenu">
-    <a href="#acasa">Acasă</a>
-    <a href="#despre">Despre</a>
-    <a href="#calculator">Calculator</a>
-    <a href="#angajare">Angajare</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<section class="hero" id="acasa">
-  <div class="hero-content">
-    <p class="badge">Wolt • Bolt Food • Glovo</p>
-    <h1>Angajăm curieri în București</h1>
-    <p class="hero-text">
-      Aplică rapid online și intră în echipa Project X Delivery.
-      Program flexibil, suport rapid și colaborare simplă.
-    </p>
-
-    <div class="hero-buttons">
-      <a href="#angajare" class="btn primary">Aplică acum</a>
-      <a href="#calculator" class="btn secondary">Calculează venitul</a>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="despre">
-  <div class="section-title reveal">
-    <h2>De ce Project X Delivery?</h2>
-    <p>Un sistem simplu pentru curieri care vor să înceapă rapid.</p>
-  </div>
-
-  <div class="cards">
-    <div class="card reveal">
-      <h3>Program flexibil</h3>
-      <p>Lucrezi în funcție de timpul tău și îți organizezi singur programul.</p>
+  <header>
+    <div class="logo">
+      Project X <span>Delivery</span>
     </div>
 
-    <div class="card reveal">
-      <h3>Suport rapid</h3>
-      <p>Primești ajutor pentru pașii de început și pentru întrebările importante.</p>
+    <nav>
+      <ul>
+        <li><a href="#acasa">Acasă</a></li>
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#calculator">Calculator</a></li>
+        <li>
+          <a 
+            href="https://wa.me/40720567098?text=Salut!%20Vreau%20sa%20aplic%20pentru%20Project%20X%20Delivery."
+            target="_blank"
+          >
+            Aplică acum
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="acasa">
+    <div class="hero-content">
+      <h1>Devino curier cu <span>Project X Delivery</span></h1>
+
+      <p>
+        Colaborăm cu livratori pentru Wolt, Bolt Food și Glovo.
+        Lucrezi flexibil, câștigi în funcție de activitate și ai sprijin la început.
+      </p>
+
+      <a 
+        class="btn"
+        href="https://wa.me/40720567098?text=Salut!%20Vreau%20sa%20aplic%20pentru%20Project%20X%20Delivery."
+        target="_blank"
+      >
+        Aplică pe WhatsApp
+      </a>
     </div>
+  </section>
 
-    <div class="card reveal">
-      <h3>Aplicare online</h3>
-      <p>Aplicarea se face rapid, direct online, iar noi te contactăm cât mai repede.</p>
+  <section id="despre">
+    <div class="container">
+      <div class="card">
+        <h2>De ce Project X Delivery?</h2>
+        <br>
+        <p>
+          Căutăm curieri serioși pentru livrări în București.
+          Poți lucra cu bicicletă, scuter sau mașină, în funcție de platformă.
+        </p>
+        <br>
+        <p>
+          ✅ Wolt &nbsp; ✅ Bolt Food &nbsp; ✅ Glovo
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="stats-section">
-  <div class="stats">
-    <div class="stat reveal">
-      <h3 class="counter" data-target="100">0</h3>
-      <p>Curieri</p>
+  <section id="calculator">
+    <div class="container">
+      <div class="calculator">
+        <h2>Calculator venit estimativ</h2>
+
+        <input type="number" id="zile" placeholder="Câte zile lucrezi pe săptămână?" />
+        <input type="number" id="castig" placeholder="Cât faci pe zi? Ex: 200" />
+        <input type="number" id="cash" placeholder="Cash primit în aplicație, dacă există" />
+
+        <button onclick="calculeazaVenit()">Calculează</button>
+
+        <h3 id="rezultat"></h3>
+      </div>
     </div>
+  </section>
 
-    <div class="stat reveal">
-      <h3 class="counter" data-target="5000">0</h3>
-      <p>Livrări</p>
-    </div>
+  <footer>
+    <p>Project X Delivery © 2026</p>
+    <p>Telefon: 0720 567 098 | Email: projectxedelivery@gmail.com</p>
+  </footer>
 
-    <div class="stat reveal">
-      <h3>24/7</h3>
-      <p>Suport</p>
-    </div>
-  </div>
-</section>
+  <script>
+    function calculeazaVenit() {
+      const zile = Number(document.getElementById("zile").value);
+      const castig = Number(document.getElementById("castig").value);
+      const cash = Number(document.getElementById("cash").value);
 
-<section class="section calculator-section" id="calculator">
-  <div class="section-title reveal">
-    <h2>Calculator venit curier</h2>
-    <p>Calculează rapid o estimare pentru câștigul tău.</p>
-  </div>
+      const total = (zile * castig) + cash;
 
-  <div class="calculator reveal">
-    <input type="number" id="zile" placeholder="Zile lucrate pe săptămână" />
-    <input type="number" id="castig" placeholder="Câștig mediu pe zi / lei" />
-    <input type="number" id="cash" placeholder="Cash în aplicație / lei" />
+      document.getElementById("rezultat").innerText =
+        "Venit estimativ: " + total + " lei / săptămână";
+    }
+  </script>
 
-    <button type="button" id="calcBtn">Calculează</button>
-
-    <div class="rezultat" id="rezultat">
-      Completează câmpurile pentru a vedea estimarea.
-    </div>
-  </div>
-</section>
-
-<section class="section platforms" id="angajare">
-  <div class="section-title reveal">
-    <h2>Aplică pentru delivery</h2>
-    <p>Poți lucra pentru platforme cunoscute prin Project X Delivery.</p>
-  </div>
-
-  <div class="platform-grid">
-    <div class="platform-card reveal glovo">
-      <span>●</span>
-      <h3>Glovo</h3>
-    </div>
-
-    <div class="platform-card reveal wolt">
-      <span>●</span>
-      <h3>Wolt</h3>
-    </div>
-
-    <div class="platform-card reveal bolt">
-      <span>●</span>
-      <h3>Bolt Food</h3>
-    </div>
-  </div>
-
-  <div class="apply-box reveal">
-    <h3>Vrei să începi?</h3>
-    <p>Aplică direct pe site. Este cea mai rapidă metodă.</p>
-    <a href="https://projectxedelivery.github.io/projectxdelivery/" class="btn primary">
-      Aplică pe site
-    </a>
-  </div>
-</section>
-
-<section class="section contact" id="contact">
-  <div class="section-title reveal">
-    <h2>Contact</h2>
-    <p>Ai întrebări? Scrie-ne direct.</p>
-  </div>
-
-  <div class="contact-box reveal">
-    <p><strong>Telefon:</strong> 0720 567 098</p>
-    <p><strong>Email:</strong> projectxedelivery@gmail.com</p>
-
-    <a href="https://wa.me/40720567098" class="btn primary">
-      Scrie pe WhatsApp
-    </a>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 Project X Delivery. Toate drepturile rezervate.</p>
-</footer>
-
-<script src="script.js"></script>
 </body>
 </html>
