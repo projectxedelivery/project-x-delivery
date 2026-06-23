@@ -568,32 +568,6 @@ textarea {
   margin-bottom: 12px;
 }
 
-.whatsapp-float {
-  position: fixed;
-  right: 22px;
-  bottom: 22px;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: #25d366;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 900;
-  letter-spacing: -0.5px;
-  z-index: 100;
-  box-shadow:
-    0 14px 35px rgba(37, 211, 102, 0.35),
-    0 0 0 6px rgba(37, 211, 102, 0.12);
-  transition: 0.25s ease;
-}
-
-.whatsapp-float:hover {
-  transform: translateY(-3px) scale(1.04);
-  background: #20bd5a;
-}
-
 .footer {
   background: #070707;
   color: #bdbdbd;
@@ -714,13 +688,5 @@ textarea {
 
   .brand-sub {
     display: none;
-  }
-
-  .whatsapp-float {
-    right: 16px;
-    bottom: 16px;
-    width: 54px;
-    height: 54px;
-    font-size: 15px;
   }
 }
