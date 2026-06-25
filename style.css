@@ -141,6 +141,40 @@ textarea {
   opacity: 0.92;
 }
 
+.lang-menu {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: 10px;
+  padding-left: 12px;
+  border-left: 1px solid rgba(229, 9, 20, 0.35);
+}
+
+.lang-btn {
+  width: 38px;
+  height: 32px;
+  border: 1px solid rgba(229, 9, 20, 0.45);
+  border-radius: 999px;
+  background: rgba(229, 9, 20, 0.12);
+  color: #ff4b55;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.lang-btn:hover {
+  background: rgba(229, 9, 20, 0.22);
+  color: #ffffff;
+}
+
+.lang-btn.active {
+  background: #e50914;
+  border-color: #e50914;
+  color: #ffffff;
+  box-shadow: 0 0 16px rgba(229, 9, 20, 0.35);
+}
+
 .menu-btn {
   display: none;
   border: none;
@@ -670,6 +704,18 @@ textarea {
     width: 32px;
     height: 32px;
   }
+
+  .lang-menu {
+    gap: 5px;
+    margin-left: 6px;
+    padding-left: 8px;
+  }
+
+  .lang-btn {
+    width: 34px;
+    height: 30px;
+    font-size: 11px;
+  }
 }
 
 @media (max-width: 980px) {
@@ -731,6 +777,20 @@ textarea {
     height: 38px;
   }
 
+  .lang-menu {
+    justify-content: flex-start;
+    margin-left: 0;
+    padding-left: 4px;
+    padding-top: 8px;
+    border-left: none;
+  }
+
+  .lang-btn {
+    width: 42px;
+    height: 34px;
+    font-size: 12px;
+  }
+
   .hero {
     padding-top: 120px;
   }
@@ -780,46 +840,5 @@ textarea {
 
   .brand-sub {
     display: none;
-  }
-}
-.lang-menu {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-left: 10px;
-  padding-left: 10px;
-  border-left: 1px solid rgba(255, 255, 255, 0.16);
-}
-
-.lang-btn {
-  width: 38px;
-  height: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: 900;
-  cursor: pointer;
-  transition: 0.25s ease;
-}
-
-.lang-btn:hover {
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.lang-btn.active {
-  background: #e50914;
-  border-color: #e50914;
-  color: #ffffff;
-  box-shadow: 0 0 16px rgba(229, 9, 20, 0.35);
-}
-
-@media (max-width: 900px) {
-  .lang-menu {
-    margin-left: 0;
-    padding-left: 4px;
-    border-left: none;
-    padding-top: 8px;
   }
 }
